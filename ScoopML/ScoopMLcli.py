@@ -5,7 +5,7 @@ import click
 def apis():
     """A CLI for managing ScoopML Cloud AI"""
     
-@click.option('--url', '--text', help='Return only APIs from this category')    
+@click.option('--url', '--text', help='return classified text')    
 def categories(url: str, text: str):
     """List all categories."""
     response = requests.post(url, data={payload: text})
