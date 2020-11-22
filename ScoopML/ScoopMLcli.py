@@ -5,9 +5,10 @@ import click
 def apis():
     """A CLI for managing ScoopML Cloud AI"""
     
-def categories():
+@click.option('--url', '--text', help='Return only APIs from this category')    
+def categories(url: str, text: str):
     """List all categories."""
-    response = requests.post(url=f'{BASE_URL}, data={payload: text})
+    response = requests.post(url, data={payload: text})
     if response.status_code is 200:
         print('\n'.join(response.json()))
     else:
