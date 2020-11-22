@@ -7,7 +7,7 @@ def apis():
     
 def categories():
     """List all categories."""
-    response = requests.post(url, data={payload: text})
+    response = requests.post(url=f'{BASE_URL}, data={payload: text})
     if response.status_code is 200:
         print('\n'.join(response.json()))
     else:
